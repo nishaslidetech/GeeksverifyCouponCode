@@ -81,6 +81,7 @@ public class Verify_Summer35_Copoun extends BaseClass {
 		Thread.sleep(3000);
 		WebElement select_ppt = wait
 				.until(ExpectedConditions.elementToBeClickable(By.xpath(OR.getProperty("selectPPT2"))));
+		js.executeScript("arguments[0].scrollIntoView(true);", select_ppt);
 		select_ppt.click();
 
 		WebElement download = wait
