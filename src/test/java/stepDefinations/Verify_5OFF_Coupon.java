@@ -56,12 +56,6 @@ public class Verify_5OFF_Coupon extends BaseClass {
 			Thread.sleep(2000);
 			WebElement login_btn = BaseClass.elementToBeClickable(By.xpath(OR.getProperty("login_Btn")));
 			login_btn.click();
-			Thread.sleep(3000);
-			if (!driver.findElements(By.xpath(OR.getProperty("logon_Pop-Up"))).isEmpty()) {
-				WebElement approve = wait
-						.until(ExpectedConditions.elementToBeClickable(By.xpath(OR.getProperty("approve_Btn"))));
-				approve.click();
-			}
 			Thread.sleep(4000);
 		} catch (NoSuchElementException e) {
 

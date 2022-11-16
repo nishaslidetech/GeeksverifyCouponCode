@@ -28,6 +28,7 @@ public class Verify_Summer35_Copoun extends BaseClass {
 		WebElement signup = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(OR.getProperty("Signup"))));
 		signup.click();
 		Thread.sleep(3000);
+		driver.get("https://www.slidegeeks.com/register?709=400");
 	}
 
 	@Then("Create a new ueser")

@@ -26,7 +26,9 @@ public class Verify_40_Delete_Coupon extends BaseClass {
 		ClearBrowserCache();
 		WebElement signup = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(OR.getProperty("Signup"))));
 		signup.click();
+		
 		Thread.sleep(3000);
+		driver.get("https://www.slidegeeks.com/register?767=421");
 	}
 
 	@Then("Creates a new ueser")

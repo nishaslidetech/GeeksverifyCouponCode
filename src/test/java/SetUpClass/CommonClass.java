@@ -215,7 +215,6 @@ public class CommonClass extends BaseClass {
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
 			Thread.sleep(2000);
-			driver.get("https://www.slidegeeks.com/register?795=4545");
 			WebElement new_email_signup = wait
 					.until(ExpectedConditions.elementToBeClickable(By.xpath(OR.getProperty("new_email_signup"))));
 			new_email_signup.sendKeys(full_email);
