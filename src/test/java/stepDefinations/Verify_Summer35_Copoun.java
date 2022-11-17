@@ -61,14 +61,7 @@ public class Verify_Summer35_Copoun extends BaseClass {
 
 			select_ppt.click();
 			Thread.sleep(3000);
-
-			WebElement download = wait
-					.until(ExpectedConditions.elementToBeClickable(By.xpath(OR.getProperty("downloadPPT"))));
-			download.click();
-			Thread.sleep(3000);
-
-			commonPage.navigatesBack();
-
+			driver.navigate().refresh();
 		} catch (NoSuchElementException e) {
 
 		}
@@ -85,7 +78,7 @@ public class Verify_Summer35_Copoun extends BaseClass {
 		select_ppt.click();
 
 		WebElement download = wait
-				.until(ExpectedConditions.elementToBeClickable(By.xpath(OR.getProperty("downloadPPT"))));
+				.until(ExpectedConditions.elementToBeClickable(By.linkText(OR.getProperty("downloadPPT"))));
 		download.click();
 		Thread.sleep(3000);
 

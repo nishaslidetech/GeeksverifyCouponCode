@@ -354,7 +354,7 @@ public class CommonClass extends BaseClass {
 			System.out.println("success_Message = " + success_Message);
 
 			Assert.assertTrue("summer35 coupon is not applied successfully",
-					success_Message.contains("Your coupon was successfully applied."));
+					success_Message.contains("You have successfully applied"));
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
