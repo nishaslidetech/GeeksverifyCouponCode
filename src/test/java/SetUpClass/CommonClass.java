@@ -285,7 +285,7 @@ public class CommonClass extends BaseClass {
 					.getText();
 			Thread.sleep(3000);
 			Assert.assertTrue("Account is not deleted",
-					verifyDeleteAccount.contains("Your account has been deleted successfully."));
+					verifyDeleteAccount.contains("Your Account has been deleted successfully."));
 			System.out.println("your account delete successfully");
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
