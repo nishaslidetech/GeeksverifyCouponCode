@@ -21,7 +21,7 @@ Scenario: verify the Summer35 coupon for existing user
   Given user is on home page click on sign in button
   Then Enter Username "VerifyCouponCode@mailinator.com" and Password "123456"
   Then User should go to the pricing page
-  Then click on join Now option
+  Then Click on join now option
   Then Apply the discount coupon code "summer35"
-  Then verify the Price
+  Then Verify the price
   Then signout from the application

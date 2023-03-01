@@ -76,9 +76,11 @@ public class Verify_Summer35_Copoun extends BaseClass {
 				.until(ExpectedConditions.elementToBeClickable(By.xpath(OR.getProperty("selectPPT2"))));
 		js.executeScript("arguments[0].scrollIntoView(true);", select_ppt);
 		select_ppt.click();
+		Thread.sleep(3000);
 
 		WebElement download = wait
 				.until(ExpectedConditions.elementToBeClickable(By.linkText(OR.getProperty("downloadPPT"))));
+		Thread.sleep(3000);
 		download.click();
 		Thread.sleep(3000);
 
@@ -179,22 +181,6 @@ public class Verify_Summer35_Copoun extends BaseClass {
 
 	}
 
-	@Then("click on join Now option")
-	public void click_on_join_Now_option() {
-
-		try {
-			WebElement joinNow = wait
-					.until(ExpectedConditions.elementToBeClickable(By.xpath(OR.getProperty("joinNow_Monthly"))));
-			js.executeScript("arguments[0].scrollIntoView();", joinNow);
-			joinNow.click();
-			Thread.sleep(5000);
-		} catch (InterruptedException e) {
-
-			e.printStackTrace();
-		}
-
-	}
-
 	@Then("Apply the discount coupon code {string}")
 	public void apply_the_discount_coupon_code(String coupon) throws InterruptedException {
 
@@ -203,7 +189,7 @@ public class Verify_Summer35_Copoun extends BaseClass {
 
 		}
 		WebElement selectDiscountRadionButton = wait
-				.until(ExpectedConditions.elementToBeClickable(By.cssSelector(OR.getProperty("selectCheckBox"))));
+				.until(ExpectedConditions.elementToBeClickable(By.xpath(OR.getProperty("selectCheckBox"))));
 		Thread.sleep(3000);
 		js.executeScript("arguments[0].click();", selectDiscountRadionButton);
 		Thread.sleep(2000);
@@ -215,15 +201,6 @@ public class Verify_Summer35_Copoun extends BaseClass {
 		WebElement ApplyCoupon = wait
 				.until(ExpectedConditions.elementToBeClickable(By.xpath(OR.getProperty("apply_Coupon"))));
 		ApplyCoupon.click();
-
-	}
-
-	@Then("verify the Price")
-	public void verify_the_Price() {
-
-		String verify_price = commonPage.verifyPrice();
-		System.out.println("verify_price = " + verify_price);
-		Assert.assertEquals("Summer35coupon is not applied successfully", verify_price, monthyPriceAferSummer35);
 
 	}
 

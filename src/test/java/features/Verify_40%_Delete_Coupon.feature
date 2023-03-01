@@ -23,6 +23,6 @@ Scenario: verify the Delete40% coupon for existing user
   Then enter Username "VerifyCouponCode@mailinator.com" and Password "123456"
   Then User should go to the Pricing page
   Then click on Join Now  option
-  Then Apply the discount Coupon Code 
-  Then verify The Price
+  Then Apply the Discount coupon code
+  Then Verify the Price
   Then Signout from the application

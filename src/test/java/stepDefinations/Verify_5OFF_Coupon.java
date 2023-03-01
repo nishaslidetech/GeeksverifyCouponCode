@@ -195,6 +195,7 @@ public class Verify_5OFF_Coupon extends BaseClass {
 
 	@Then("Remove the coupon code and check the message")
 	public void Remove_the_coupon_code_and_check_the_message() throws InterruptedException {
+
 		Thread.sleep(2000);
 		commonPage.removeCoupon();
 
@@ -266,6 +267,7 @@ public class Verify_5OFF_Coupon extends BaseClass {
 
 	@Then("remove The coupon code and check the message")
 	public void remove_The_coupon_code_and_check_the_message() throws InterruptedException {
+
 		Thread.sleep(2000);
 		commonPage.removeCoupon();
 
@@ -342,6 +344,7 @@ public class Verify_5OFF_Coupon extends BaseClass {
 
 	@Then("Navigates Back to the Pricing Page")
 	public void Navigates_Back_to_the_Pricing_Page() throws InterruptedException {
+
 		driver.navigate().refresh();
 		commonPage.navigatesBack();
 
@@ -349,18 +352,22 @@ public class Verify_5OFF_Coupon extends BaseClass {
 
 	@Then("select Business Team option")
 	public void select_business_team_option() throws Throwable {
+
 		Thread.sleep(3000);
 		WebElement businessTeam = wait
 				.until(ExpectedConditions.elementToBeClickable(By.xpath(OR.getProperty("businessTeam"))));
 		businessTeam.click();
 		Thread.sleep(4000);
+
 	}
 
 	@Then("click on join now Annual four user licence option")
 	public void click_on_join_now_Annual_four_user_licence_option() throws InterruptedException {
+
 		joinNow = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(OR.getProperty("annual_4_User_Lience"))));
 		joinNow.click();
 		Thread.sleep(4000);
+
 	}
 
 	@Then("verify that user should be on Checkout Page")
@@ -375,9 +382,11 @@ public class Verify_5OFF_Coupon extends BaseClass {
 
 	@Then("verify the price for stripe Option")
 	public void verify_the_price_for_stripe_Option() {
+
 		verify_price = commonPage.verifyPrice();
 
 		Assert.assertTrue("5off coupon is not applied successfully", verify_price.equals(annual_4_user_Licence_Price));
+
 	}
 
 	@Then("Remove the Coupon Code")
@@ -392,8 +401,10 @@ public class Verify_5OFF_Coupon extends BaseClass {
 
 	@Then("verify the price For paypal")
 	public void verify_the_price_For_paypal() {
+
 		verify_price = commonPage.verifyPrice();
 		Assert.assertTrue("5off coupon is not applied successfully", verify_price.equals(annual_4_user_Licence_Price));
+
 	}
 
 	@Then("remove the coupon Code and check the message")
@@ -403,18 +414,22 @@ public class Verify_5OFF_Coupon extends BaseClass {
 
 	@Then("Navigates back to the pricing page")
 	public void Navigates_back_to_the_pricing_page() throws InterruptedException {
+
 		commonPage.navigatesBack();
 		WebElement businessTeam = wait
 				.until(ExpectedConditions.elementToBeClickable(By.xpath(OR.getProperty("businessTeam"))));
 		businessTeam.click();
+
 	}
 
 	@Then("click on join now Annual twenty user licence option")
 	public void click_on_join_now_annual_twenty_user_licence_option() throws InterruptedException {
+
 		WebElement joinNow1 = wait
 				.until(ExpectedConditions.elementToBeClickable(By.xpath(OR.getProperty("annual_20_User_Lience"))));
 		BaseClass.js.executeScript("arguments[0].click();", joinNow1);
 		Thread.sleep(4000);
+
 	}
 
 	@Then("Verify that user should be on Checkout page")
@@ -430,9 +445,11 @@ public class Verify_5OFF_Coupon extends BaseClass {
 
 	@Then("verify the price For Stripe option")
 	public void verify_the_price_For_Stripe_option() {
+
 		verify_price = commonPage.verifyPrice();
 
 		Assert.assertTrue("5off coupon is not applied successfully", verify_price.equals(annual_20_user_Licence_Price));
+
 	}
 
 	@Then("remove the Applied coupon code")
@@ -447,9 +464,11 @@ public class Verify_5OFF_Coupon extends BaseClass {
 
 	@Then("verify the price for Paypal")
 	public void verify_the_price_for_Paypal() {
+
 		verify_price = commonPage.verifyPrice();
 
 		Assert.assertTrue("5off coupon is not applied successfully", verify_price.equals(annual_20_user_Licence_Price));
+
 	}
 
 	@Then("remove the coupon code nd Check the message")
@@ -459,18 +478,22 @@ public class Verify_5OFF_Coupon extends BaseClass {
 
 	@Then("navigates Back to the pricing page")
 	public void navigates_Back_to_the_pricing_page() throws InterruptedException {
+
 		commonPage.navigatesBack();
 		WebElement businessTeam = wait
 				.until(ExpectedConditions.elementToBeClickable(By.xpath(OR.getProperty("businessTeam"))));
 		businessTeam.click();
+
 	}
 
 	@Then("click on join now unlimted user licence option")
 	public void click_on_join_now_unlimted_user_licence_option() throws InterruptedException {
+
 		WebElement joinNow2 = wait.until(
 				ExpectedConditions.elementToBeClickable(By.xpath(OR.getProperty("annual_unlimted_User_Lience"))));
 		BaseClass.js.executeScript("arguments[0].click();", joinNow2);
 		Thread.sleep(4000);
+
 	}
 
 	@Then("Verify that user should be on Checkout Page")
@@ -486,10 +509,12 @@ public class Verify_5OFF_Coupon extends BaseClass {
 
 	@Then("Verify the price for Stripe option")
 	public void Verify_the_price_for_Stripe_option() {
+
 		verify_price = commonPage.verifyPrice();
 
 		Assert.assertTrue("5off coupon is not applied successfully",
 				verify_price.equals(annual_unlimted_user_Licence_Price));
+
 	}
 
 	@Then("remove the Applied coupon")
@@ -504,10 +529,12 @@ public class Verify_5OFF_Coupon extends BaseClass {
 
 	@Then("Verify the price for Paypal")
 	public void Verify_the_price_for_Paypal() {
+
 		verify_price = commonPage.verifyPrice();
 
 		Assert.assertTrue("5off coupon is not applied successfully",
 				verify_price.equals(annual_unlimted_user_Licence_Price));
+
 	}
 
 	@Then("remove the coupon code and check the Message")
@@ -531,6 +558,7 @@ public class Verify_5OFF_Coupon extends BaseClass {
 
 	@Then("click on join now Annual user licence option")
 	public void click_on_join_now_annual_user_licence_option() throws InterruptedException {
+
 		joinNow = wait.until(
 				ExpectedConditions.elementToBeClickable(By.xpath(OR.getProperty("annual_20_User_education_Lience"))));
 		joinNow.click();
@@ -551,10 +579,12 @@ public class Verify_5OFF_Coupon extends BaseClass {
 
 	@Then("Verify the Price For Stripe Option")
 	public void Verify_the_Price_For_Stripe_Option() {
+
 		verify_price = commonPage.verifyPrice();
 
 		Assert.assertTrue("5off coupon is not applied successfully",
 				verify_price.equals(annual_3_user_education_Licence_Price));
+
 	}
 
 	@Then("Remove the coupon")
@@ -569,9 +599,11 @@ public class Verify_5OFF_Coupon extends BaseClass {
 
 	@Then("Verify The price for paypal")
 	public void Verify_The_price_for_paypal() {
+
 		verify_price = commonPage.verifyPrice();
 		Assert.assertTrue("5off coupon is not applied successfully",
 				verify_price.equals(annual_3_user_education_Licence_Price));
+
 	}
 
 	@Then("Remove the coupon code and check the Message")
@@ -581,6 +613,7 @@ public class Verify_5OFF_Coupon extends BaseClass {
 
 	@Then("navigates back to The pricing page")
 	public void navigates_back_to_The_pricing_page() throws InterruptedException {
+
 		commonPage.navigatesBack();
 		WebElement education = wait
 				.until(ExpectedConditions.elementToBeClickable(By.xpath(OR.getProperty("education"))));
@@ -590,6 +623,7 @@ public class Verify_5OFF_Coupon extends BaseClass {
 
 	@Then("click on join now unlimted users licence option")
 	public void click_on_join_now_unlimted_users_licence_option() throws InterruptedException {
+
 		joinNow = wait.until(ExpectedConditions
 				.elementToBeClickable(By.xpath(OR.getProperty("annual_unlimited_institute_wides_Lience"))));
 		joinNow.click();
@@ -610,9 +644,11 @@ public class Verify_5OFF_Coupon extends BaseClass {
 
 	@Then("verify the Prices for stripe options")
 	public void verify_the_prices_for_stripe_options() {
+
 		verify_price = commonPage.verifyPrice();
 		Assert.assertTrue("5off coupon is not applied successfully",
 				verify_price.equals(annual_15_user_education_Licence_Price));
+
 	}
 
 	@Then("remove The Applied Coupon Code")
@@ -627,9 +663,11 @@ public class Verify_5OFF_Coupon extends BaseClass {
 
 	@Then("Verify The Price for Paypal")
 	public void Verify_the_Price_for_Paypal() {
+
 		verify_price = commonPage.verifyPrice();
 		Assert.assertTrue("5off coupon is not applied successfully",
 				verify_price.equals(annual_15_user_education_Licence_Price));
+
 	}
 
 	@Then("Remove the Coupon code and check the Message")

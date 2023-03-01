@@ -52,19 +52,21 @@ public class CommonClass extends BaseClass {
 
 			}
 
-			// js.executeScript("window.scrollBy(0,400)");
-			selectCheckBox = BaseClass.elementToBeClickable(By.cssSelector(OR.getProperty("selectCheckBox")));
-			js.executeScript("arguments[0].scrollIntoView();", selectCheckBox);
+			 js.executeScript("window.scrollBy(0,400)");
+			selectCheckBox = BaseClass.elementToBeClickable(By.xpath(OR.getProperty("selectCheckBox")));
+			//js.executeScript("arguments[0].scrollIntoView();", selectCheckBox);
 			js.executeScript("arguments[0].click();", selectCheckBox);
 			Thread.sleep(3000);
 
 			enterCouponCode = wait
 					.until(ExpectedConditions.elementToBeClickable(By.xpath(OR.getProperty("enterCouponCode"))));
+			Thread.sleep(3000);
 			enterCouponCode.sendKeys("5OFF");
+			
 
 			apply_Coupon = wait
 					.until(ExpectedConditions.elementToBeClickable(By.xpath(OR.getProperty("apply_Coupon"))));
-			// js.executeScript("arguments[0].click();",apply_Coupon);
+			Thread.sleep(3000);
 			apply_Coupon.click();
 			Thread.sleep(4000);
 
@@ -126,16 +128,18 @@ public class CommonClass extends BaseClass {
 
 			Thread.sleep(3000);
 			selectCheckBox = wait
-					.until(ExpectedConditions.elementToBeClickable(By.cssSelector(OR.getProperty("selectCheckBox"))));
+					.until(ExpectedConditions.elementToBeClickable(By.xpath(OR.getProperty("selectCheckBox"))));
 			Thread.sleep(3000);
 			js.executeScript("arguments[0].click();", selectCheckBox);
 
 			enterCouponCode = wait
 					.until(ExpectedConditions.elementToBeClickable(By.xpath(OR.getProperty("enterCouponCode"))));
+			Thread.sleep(3000);
 			enterCouponCode.sendKeys("5OFF");
 
 			apply_Coupon = wait
 					.until(ExpectedConditions.elementToBeClickable(By.xpath(OR.getProperty("apply_Coupon"))));
+			Thread.sleep(3000);
 			apply_Coupon.click();
 			Thread.sleep(3000);
 
@@ -236,12 +240,12 @@ public class CommonClass extends BaseClass {
 			WebElement new_pwd1_signup = wait
 					.until(ExpectedConditions.elementToBeClickable(By.xpath(OR.getProperty("confirm_Password"))));
 			new_pwd1_signup.sendKeys("selenium@123");
-			Thread.sleep(3000);
+			Thread.sleep(9000);
 			// sign up button
 			WebElement new_btn_signup = wait
 					.until(ExpectedConditions.elementToBeClickable(By.cssSelector(OR.getProperty("new_btn_signup"))));
 			Thread.sleep(3000);
-			//new_btn_signup.click();
+			// new_btn_signup.click();
 			js.executeScript("arguments[0].click();", new_btn_signup);
 			Thread.sleep(5000);
 		} catch (InterruptedException e) {
@@ -318,7 +322,7 @@ public class CommonClass extends BaseClass {
 			js.executeScript("window.scrollBy(0,400)");
 			Thread.sleep(2000);
 			WebElement selectDiscountRadionButton = wait
-					.until(ExpectedConditions.elementToBeClickable(By.cssSelector(OR.getProperty("selectCheckBox"))));
+					.until(ExpectedConditions.elementToBeClickable(By.xpath(OR.getProperty("selectCheckBox"))));
 			Thread.sleep(3000);
 			js.executeScript("arguments[0].click();", selectDiscountRadionButton);
 			Thread.sleep(2000);
@@ -398,8 +402,9 @@ public class CommonClass extends BaseClass {
 				removeCoupon();
 
 			}
+			Thread.sleep(4000);
 			WebElement selectDiscountRadionButton = wait
-					.until(ExpectedConditions.elementToBeClickable(By.cssSelector(OR.getProperty("selectCheckBox"))));
+					.until(ExpectedConditions.elementToBeClickable(By.xpath(OR.getProperty("selectCheckBox"))));
 			js.executeScript("arguments[0].click();", selectDiscountRadionButton);
 			Thread.sleep(4000);
 
@@ -432,4 +437,30 @@ public class CommonClass extends BaseClass {
 
 	}
 
+	public void chatWindow() throws Throwable {
+
+		try {
+			WebElement iframe = driver.findElement(By.xpath("//iframe[@id = 'chat-widget' or @name = 'chat-widget']"));
+			Thread.sleep(1000);
+			boolean value = iframe.isDisplayed();
+			System.out.println("value = " + value);
+			if (value == true) {
+				driver.switchTo().frame(iframe);
+				WebElement chat1 = wait.until(ExpectedConditions.elementToBeClickable(
+						By.xpath("//div[@role = 'main']//button[@aria-label = 'Minimize window']")));
+				Thread.sleep(1000);
+				chat1.click();
+				Thread.sleep(1000);
+				driver.switchTo().defaultContent();
+				Thread.sleep(1000);
+				driver.switchTo().parentFrame();
+				Thread.sleep(3000);
+			} else {
+
+				System.out.println("chat window does not open");
+			}
+		} catch (NoSuchElementException NCP) {
+
+		}
+	}
 }
