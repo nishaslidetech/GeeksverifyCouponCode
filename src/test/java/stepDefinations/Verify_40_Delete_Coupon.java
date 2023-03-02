@@ -43,7 +43,7 @@ public class Verify_40_Delete_Coupon extends BaseClass {
 		try {
 			Thread.sleep(2000);
 			WebElement account = driver.findElement(By.xpath(OR.getProperty("account")));
-			account.click();
+			js.executeScript("arguments[0].click();", account);
 			Thread.sleep(3000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
@@ -54,11 +54,11 @@ public class Verify_40_Delete_Coupon extends BaseClass {
 	@Then("Click on delete button")
 	public void click_on_delete_button() throws Throwable {
 		try {
-			commonPage.chatWindow();
+		
 			WebElement Delete_Account = wait
 					.until(ExpectedConditions.elementToBeClickable(By.xpath(OR.getProperty("Delete_Account"))));
 			Thread.sleep(2000);
-			Delete_Account.click();
+			js.executeScript("arguments[0].click();", Delete_Account);
 			Thread.sleep(5000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
@@ -72,14 +72,14 @@ public class Verify_40_Delete_Coupon extends BaseClass {
 			WebElement radio_button = wait
 					.until(ExpectedConditions.elementToBeClickable(By.xpath(OR.getProperty("radio_button"))));
 			Thread.sleep(4000);
-			radio_button.click();
+			js.executeScript("arguments[0].click();", radio_button);
 			Thread.sleep(1000);
 
 			WebElement delete_Profile = wait
 					.until(ExpectedConditions.elementToBeClickable(By.xpath(OR.getProperty("delete_Profile"))));
-			delete_Profile.click();
+			js.executeScript("arguments[0].click();", delete_Profile);
 			Thread.sleep(2000);
-			commonPage.chatWindow();
+
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
