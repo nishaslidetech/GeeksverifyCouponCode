@@ -45,24 +45,24 @@ public class CommonClass extends BaseClass {
 			js.executeScript("arguments[0].click();", stripeOption);
 
 			// Apply coupon
-			Thread.sleep(3000);
+			Thread.sleep(4000);
 
 			if (!driver.findElements(By.xpath(OR.getProperty("remove_Coupon"))).isEmpty()) {
 				removeCoupon();
 
 			}
 
-			 js.executeScript("window.scrollBy(0,400)");
+			js.executeScript("window.scrollBy(0,400)");
+			Thread.sleep(4000);
 			selectCheckBox = BaseClass.elementToBeClickable(By.xpath(OR.getProperty("selectCheckBox")));
-			//js.executeScript("arguments[0].scrollIntoView();", selectCheckBox);
 			js.executeScript("arguments[0].click();", selectCheckBox);
-			Thread.sleep(3000);
+			Thread.sleep(4000);
 
 			enterCouponCode = wait
 					.until(ExpectedConditions.elementToBeClickable(By.xpath(OR.getProperty("enterCouponCode"))));
-			Thread.sleep(3000);
+			Thread.sleep(4000);
 			enterCouponCode.sendKeys("5OFF");
-			
+			Thread.sleep(4000);
 
 			apply_Coupon = wait
 					.until(ExpectedConditions.elementToBeClickable(By.xpath(OR.getProperty("apply_Coupon"))));
@@ -88,11 +88,12 @@ public class CommonClass extends BaseClass {
 	public void removeCoupon() throws InterruptedException {
 
 		try {
+			Thread.sleep(3000);
 			remove_Coupon = wait
 					.until(ExpectedConditions.elementToBeClickable(By.xpath(OR.getProperty("remove_Coupon")))); //
 			Thread.sleep(3000);
 			remove_Coupon.click();
-			Thread.sleep(3000);
+			Thread.sleep(4000);
 
 			// delete coupon message
 			delete_Coupon_Message = wait
@@ -131,11 +132,13 @@ public class CommonClass extends BaseClass {
 					.until(ExpectedConditions.elementToBeClickable(By.xpath(OR.getProperty("selectCheckBox"))));
 			Thread.sleep(3000);
 			js.executeScript("arguments[0].click();", selectCheckBox);
+			Thread.sleep(3000);
 
 			enterCouponCode = wait
 					.until(ExpectedConditions.elementToBeClickable(By.xpath(OR.getProperty("enterCouponCode"))));
 			Thread.sleep(3000);
 			enterCouponCode.sendKeys("5OFF");
+			Thread.sleep(3000);
 
 			apply_Coupon = wait
 					.until(ExpectedConditions.elementToBeClickable(By.xpath(OR.getProperty("apply_Coupon"))));
@@ -168,7 +171,7 @@ public class CommonClass extends BaseClass {
 			Thread.sleep(3000);
 			Price = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(OR.getProperty("verify_Price"))));
 			js.executeScript("window.scrollBy(0,20)", "");
-			// js.executeScript("arguments[0].scrollIntoView();", Price);
+			Thread.sleep(3000);
 			price = Price.getText();
 			System.out.println("Price = " + price);
 
@@ -186,7 +189,8 @@ public class CommonClass extends BaseClass {
 		Assert.assertEquals("Title does not match", expected_Title, actual_Title);
 	}
 
-	public void navigatesBack() {
+	public void navigatesBack() throws InterruptedException {
+		Thread.sleep(3000);
 		driver.navigate().back();
 		try {
 			Thread.sleep(4000);
@@ -297,18 +301,19 @@ public class CommonClass extends BaseClass {
 		}
 	}
 
-	public void copySummer35Coupon() {
+	public void copySummer35Coupon() throws InterruptedException {
 
 		// copy the coupon code
 		WebElement copySummer35 = wait
 				.until(ExpectedConditions.elementToBeClickable(By.xpath(OR.getProperty("copySummer35"))));
-		// copySummer35.click();
+		Thread.sleep(3000);
 		Summer35Value = copySummer35.getAttribute("value");
 
 		System.out.println("Summer35Value = " + Summer35Value);
 
 		WebElement CloseSummer35Popup = wait
 				.until(ExpectedConditions.elementToBeClickable(By.xpath(OR.getProperty("CloseSummer35Popup"))));
+		Thread.sleep(3000);
 		CloseSummer35Popup.click();
 
 	}
@@ -320,17 +325,18 @@ public class CommonClass extends BaseClass {
 
 			}
 			js.executeScript("window.scrollBy(0,400)");
-			Thread.sleep(2000);
+			Thread.sleep(3000);
 			WebElement selectDiscountRadionButton = wait
 					.until(ExpectedConditions.elementToBeClickable(By.xpath(OR.getProperty("selectCheckBox"))));
 			Thread.sleep(3000);
 			js.executeScript("arguments[0].click();", selectDiscountRadionButton);
-			Thread.sleep(2000);
+			Thread.sleep(3000);
 
 			WebElement enterCouponCode = wait
 					.until(ExpectedConditions.elementToBeClickable(By.xpath(OR.getProperty("enterCouponCode"))));
+			Thread.sleep(3000);
 			System.out.println("Summer35Value2 = " + Summer35Value);
-			Thread.sleep(2000);
+			Thread.sleep(3000);
 			try {
 				enterCouponCode.sendKeys(Summer35Value);
 			} catch (Exception e) {
@@ -349,7 +355,9 @@ public class CommonClass extends BaseClass {
 
 			WebElement ApplyCoupon = wait
 					.until(ExpectedConditions.elementToBeClickable(By.xpath(OR.getProperty("apply_Coupon"))));
+			Thread.sleep(3000);
 			ApplyCoupon.click();
+			Thread.sleep(3000);
 
 			success_Message = wait
 					.until(ExpectedConditions.elementToBeClickable(By.xpath(OR.getProperty("success_Message"))))
@@ -384,11 +392,11 @@ public class CommonClass extends BaseClass {
 		}
 	}
 
-	public void copyDeleteDiscountCoupon() {
+	public void copyDeleteDiscountCoupon() throws InterruptedException {
 		copyDeleteDiscountCoupon = wait
 				.until(ExpectedConditions.elementToBeClickable(By.xpath(OR.getProperty("copyDeleteDiscountCoupon"))))
 				.getAttribute("value");
-
+		Thread.sleep(3000);
 		WebElement i_LoveMyDisscount = wait
 				.until(ExpectedConditions.elementToBeClickable(By.xpath(OR.getProperty("iLoveMyDisscount"))));
 		i_LoveMyDisscount.click();
@@ -405,11 +413,13 @@ public class CommonClass extends BaseClass {
 			Thread.sleep(4000);
 			WebElement selectDiscountRadionButton = wait
 					.until(ExpectedConditions.elementToBeClickable(By.xpath(OR.getProperty("selectCheckBox"))));
+			Thread.sleep(3000);
 			js.executeScript("arguments[0].click();", selectDiscountRadionButton);
 			Thread.sleep(4000);
 
 			WebElement enterCouponCode = wait
 					.until(ExpectedConditions.elementToBeClickable(By.xpath(OR.getProperty("enterCouponCode"))));
+			Thread.sleep(3000);
 
 			try {
 				enterCouponCode.sendKeys(copyDeleteDiscountCoupon);
@@ -417,9 +427,10 @@ public class CommonClass extends BaseClass {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-
+			Thread.sleep(3000);
 			WebElement ApplyCoupon = wait
 					.until(ExpectedConditions.elementToBeClickable(By.xpath(OR.getProperty("apply_Coupon"))));
+			Thread.sleep(3000);
 			ApplyCoupon.click();
 			Thread.sleep(2000);
 			success_Message = wait

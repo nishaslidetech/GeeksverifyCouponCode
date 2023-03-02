@@ -87,7 +87,7 @@ public class Verify_Summer35_Copoun extends BaseClass {
 	}
 
 	@Then("Copy and Paste the cpupon code and verify the code")
-	public void copy_and_paste_the_cpupon_code_and_verify_the_code() {
+	public void copy_and_paste_the_cpupon_code_and_verify_the_code() throws InterruptedException {
 		commonPage.copySummer35Coupon();
 
 	}

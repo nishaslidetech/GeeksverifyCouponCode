@@ -87,7 +87,7 @@ public class Verify_40_Delete_Coupon extends BaseClass {
 	}
 
 	@Then("copy the discount coupon code")
-	public void copy_the_discount_coupon_code() {
+	public void copy_the_discount_coupon_code() throws InterruptedException {
 
 		commonPage.copyDeleteDiscountCoupon();
 
@@ -184,9 +184,9 @@ public class Verify_40_Delete_Coupon extends BaseClass {
 		try {
 
 			WebElement account = driver.findElement(By.xpath(OR.getProperty("account")));
-			account.click();
+			js.executeScript("arguments[0].click();", account);
 			Thread.sleep(3000);
-			commonPage.chatWindow();
+			
 
 			WebElement Delete_Account = wait
 					.until(ExpectedConditions.elementToBeClickable(By.xpath(OR.getProperty("Delete_Account"))));
